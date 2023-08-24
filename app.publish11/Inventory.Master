@@ -1,0 +1,171 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Inventory.Master.cs" Inherits="MasterPage19.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+            border-color: #000000;
+            border-width: 0;
+            background-color: whitesmoke;
+            margin:0px;
+            padding:0px;
+        }
+        .auto-style2 {
+            width: 79%;
+        }
+        #Image1 {
+           height:20px;
+           width:35px;
+
+        }
+        .body{
+            margin:0px 0px;
+        }
+
+         
+        .auto-style4 {
+            width: 95px;
+        }
+        .linkbtnhome{
+         /*   margin-left :-471px;*/
+        }
+        .empcss{
+            margin-left: 260px;
+        }
+
+         
+        .auto-style5 {
+            text-align: right;
+        }
+        .auto-style6 {
+            text-align: center;
+        }
+         .background_forget {
+            background-color: cornsilk;
+            filter: alpha(opacity=90);
+            opacity: 0.9;
+        }
+         .rounderdcorrner_forget {
+            font-size: 11pt;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 1px;
+            padding: 3px;
+            border-top: 1px solid;
+            border-left: 1px solid;
+            border-right: 1px solid;
+            border-bottom: 1px solid;
+            -moz-border-radius: 8px;
+            -webkit-border-radius: 8px;
+            text-align: center;
+         }
+         .container_forget
+         {
+               width: 250px;
+               height:204px;
+               border: none;
+               box-shadow: 2px 2px 4px 0px #b78f8f;
+               border-radius: 14px;
+               /*height: auto !important;*/
+               padding: 0px 20px;
+         }
+         /*#modalpopUp{
+             visibility:collapse;
+         }*/
+        </style>
+</head>
+<body style="margin-bottom: 20px ">
+    <form id="form1" runat="server">
+   
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>   
+
+        <div >
+            <asp:Panel ID="pnlheader" runat="server" Width="100%">
+            <table id="tblheader" cellspacing="4" class="auto-style1">
+                <tr>
+                    <td class="auto-style4">
+                        <asp:Image ID="Image1" runat="server" ImageUrl="~/Image/osiyatechlogo.jpg" Height="36px" Width="88px"  />
+                    </td>
+                    <td class="auto-style2">
+                        <asp:LinkButton ID="btnHome" runat="server" Font-Size="16px" Font-Underline="False" ForeColor="Black" PostBackUrl="~/Home.aspx">Home</asp:LinkButton>
+&nbsp;&nbsp;
+                        <asp:LinkButton ID="Btnabout" runat="server" Font-Size="16px" Font-Underline="False" ForeColor="Black"  CssClass="linkbtnhome"  PostBackUrl="~/About.aspx">About</asp:LinkButton>
+&nbsp;&nbsp;
+                        <asp:LinkButton ID="btncontact" runat="server" Font-Size="16px" Font-Underline="False" ForeColor="Black" PostBackUrl="~/contact.aspx">Contact</asp:LinkButton>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                     
+                        <asp:LinkButton ID="btnemployee" runat="server"  Font-Size="16px" Font-Underline="False" ForeColor="Black" CssClass="empcss" PostBackUrl="~/Employee.aspx" Visible="false">Employee</asp:LinkButton>
+                         <asp:LinkButton ID="btnemployeeAdmin" runat="server"  Font-Size="16px" Font-Underline="False" ForeColor="Black" PostBackUrl="~/EmployeeAdmin.aspx" Visible="false" >Employee</asp:LinkButton>
+&nbsp;
+                        <asp:LinkButton ID="btninventry" runat="server" Font-Size="16px" Font-Underline="False" ForeColor="Black" PostBackUrl="~/Inventoryosiya.aspx" Visible="false"> Inventory</asp:LinkButton>
+                         <asp:LinkButton ID="btninventryAdmin" runat="server" Font-Size="16px"  Font-Underline="False" ForeColor="Black" PostBackUrl="~/inventoryAdmin.aspx" Visible="false">Inventory</asp:LinkButton>
+&nbsp;&nbsp;
+                        <asp:LinkButton ID="btnitemname" runat="server" Font-Size="16px" Font-Underline="False" ForeColor="Black" PostBackUrl="~/ItemName.aspx" Visible="false">ItemName</asp:LinkButton>
+                         <asp:LinkButton ID="brnitemnameAdmin" runat="server" Font-Size="16px" Font-Underline="False"  ForeColor="Black" PostBackUrl="~/ItemNameAdmin.aspx" Visible="false">ItemName</asp:LinkButton>
+&nbsp;
+                        <asp:LinkButton ID="btnitemtype" runat="server" Font-Size="16px" Font-Underline="False"  ForeColor="Black" PostBackUrl="~/ItemType.aspx" Visible="false">ItemType</asp:LinkButton>
+                        <asp:LinkButton ID="btnitemtypeAdmin" runat="server" Font-Size="16px" Font-Underline="False"  ForeColor="Black" PostBackUrl="~/ItemTypeAdmin.aspx" Visible="false">ItemType</asp:LinkButton>
+&nbsp;&nbsp;
+                    
+                        <asp:LinkButton ID="btnstock" runat="server" Font-Size="16px" Font-Underline="False" ForeColor="Black" Visible="false" PostBackUrl="~/Stock.aspx">Stock</asp:LinkButton>
+                        <asp:LinkButton ID="btnstockadmin" runat="server" Font-Size="16px"  Font-Underline="False" ForeColor="Black" Visible="false" PostBackUrl="~/StockAdmin.aspx">Stock</asp:LinkButton>
+                        <ajaxToolkit:AlwaysVisibleControlExtender ID="AlwaysVisibleControlExtender1" runat="server"   TargetControlID="pnlheader"/>
+                    </td>
+                      <td>
+                        <asp:LinkButton ID="btnlogin" runat="server" Font-Size="16px" Font-Underline="False" ForeColor="Black" PostBackUrl="~/Loginpage.aspx">Login</asp:LinkButton>
+                          <asp:LinkButton ID="brnlogout" runat="server" Font-Size="16px" Visible="false" Font-Underline="False" ForeColor="Black"  OnClick="brnlogout_Click">Logout</asp:LinkButton>
+                          &nbsp;&nbsp;
+                        <asp:LinkButton ID="btnHello" runat="server" Font-Size="16px" Font-Underline="False" ForeColor="Black">Hello</asp:LinkButton>
+             <%--      <%=Session["ID"].ToString()%>
+                        <%=Session["Name"].ToString()%> --%>
+                     </td>
+                </tr>
+            </table>
+                </asp:Panel>
+         <%--   <asp:Panel runat="server" Id="modalpopUp"  >
+                <div class="container_forget rounderdcorrner_forget " id="pnlloginselect" role="dialog">
+                            <div class="background_forget">
+                               
+                                        <h1 class="auto-style5">
+                                           
+                               <asp:ImageButton ID="imgcenceladmin" runat="server" Height="16px" ImageAlign="Baseline" ImageUrl="~/Image/crossimg.jpg" Width="16px"  OnClick="imgcenceladmin_Click"/>
+                                             </h1>
+                                        <h1 class="auto-style6">Please select</h1>
+                                    </div>
+                                    <div class="auto-style23">
+
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <asp:Button ID="btnadmin" runat="server" Font-Overline="False" Font-Size="16px" BackColor="#3366ff" ForeColor="White" Text="Admin"  PostBackUrl="/AdminLogin.aspx"/>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <asp:Button ID="btnuser" runat="server" Font-Size="16px" ForeColor="White" BackColor="#3366ff" Text="User"  PostBackUrl="/Loginpage.aspx"/>
+
+                                      </div>
+                    <ajaxToolkit:ModalPopupExtender ID="ModalPopupExtender1" runat="server" TargetControlID="btnlogin"  PopupControlID="modalpopUp" 
+                         BackgroundCssClass="background_forget"></ajaxToolkit:ModalPopupExtender>
+                     </div>
+            </asp:Panel>--%>
+          
+           
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+             
+            
+             
+       </asp:ContentPlaceHolder>                      
+            </asp:ContentPlaceHolder>
+        </div>
+   
+    </form>
+    <asp:Panel ID="pnlfooter" runat="server">
+    <div id="footer" style="text-align: center; background-color: #999999;" class="auto-style13">
+        &#169; All Copyright Reserve To Osiyatech 
+    </div>
+     </asp:Panel>
+
+</body>
+</html>
